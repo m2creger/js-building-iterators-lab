@@ -1,11 +1,39 @@
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce for more details
 // Don't worry about initialValue at first. You can always add it in later.
 
-function myReduce(arr, callback) {
+/*
+var arr = [1, 5, 7, 3, 8, 9];
+var sumOfArray;
+*/
+
+
+
+function myReduce(arr, callback, accumulator) {
 
 //  CODE INSIDE HERE   //
 
+
+	for ( var i = 0; i < arr.length; i++) {
+		if (accumulator === undefined && i === 0) {
+			accumulator = arr[i];
+		} else {
+			accumulator = callback(accumulator, arr[i], i, arr)
+		}
+
+	}
+
+	return accumulator;
+
 }
+/*
+function adder(value1) {
+	var tempValue = value1;
+	sumOfArray += tempValue;
+	console.log
+	return sumOfArray;
+
+}
+*/
 
 /*
  Best if you don't code out here.
